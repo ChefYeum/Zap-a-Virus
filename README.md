@@ -1,64 +1,29 @@
-melonJS boilerplate
--------------------------------------------------------------------------------
+[![Netlify Status](https://api.netlify.com/api/v1/badges/14e7ef42-5c90-44c8-a7ec-0b6e20c59735/deploy-status)](https://pixi-typescript-boilerplate.netlify.com)
 
-features :
-- video autoscaling
-- mobile optimized HTML/CSS
-- swiping disabled on iOS devices
-- debug Panel (if #debug)
-- default icons
-- distribution build
-- standalone build for desktop operating systems
-- optional ES5 shim for non ES5 compliant browser (see index.html)
+# pixi-typescript-boilerplate
 
-## To run distribution
+Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 
-To build, be sure you have [node](http://nodejs.org) installed. Clone the project:
+## Highlights
 
-    git clone https://github.com/melonjs/boilerplate.git
+-   🔰 Beginner friendly.
+-   🚀 Blazing fast bundle times
+-   📝 Typescript.
+-   ✈️ Live reload.
+-   📝 Consistent code style using Prettier and Eslint
 
-Then in the cloned directory, simply run:
+## Usage
 
-    npm install
+### Click on the green button "Use this template" on top of the repo or <br> <br> Simply copy paste this and start coding
 
-You must also have `grunt-cli` installed globally:
+`git clone --depth=1 --branch=master https://github.com/jkanchelov/pixi-typescript-boilerplate`
 
-    npm install -g grunt-cli
+`rm -r -force ./pixi-typescript-boilerplate/.git`
 
-Running the game:
+## Commands:
 
-	grunt serve
+-   `npm run build` - starts build procedure
+-   `npm run dev` - start watching for files and open's server on localhost:8080
+-   `npm run code-style-check` - run's eslint and prettier check on your code
 
-And you will have the boilerplate example running on http://localhost:8000
-
-## Building Release Versions
-
-To build:
-
-    grunt
-
-This will create a `build` directory containing the files that can be uploaded to a server, or packaged into a mobile app.
-
-----
-
-Building a standalone desktop release:
-
-    grunt dist
-
-Running the desktop release on Windows:
-
-    .\bin\electron.exe
-
-Running the desktop release on macOS:
-
-    open ./bin/Electron.app
-
-Running the desktop release on Linux:
-
-    ./bin/electron
-
-Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order.
-
--------------------------------------------------------------------------------
-Copyright (C) 2011 - 2017 Olivier Biot
-melonJS is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
+For vscode users - ctrl ( or ⌘ ) + shift + b will run the watch build as its set as default vscode task
