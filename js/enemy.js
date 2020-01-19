@@ -12,6 +12,7 @@ game.Enemy = me.Entity.extend({
     },
 
     update: function(time) {
+
         // this.body.vel.y -= this.body.accel.y * time / 1000;
         if (this.pos.y + this.height >= me.game.viewport.height) {
             me.game.world.removeChild(this);
@@ -28,17 +29,16 @@ game.Enemy = me.Entity.extend({
     },
 
 
-    // onCollision: function(res, other) {
-    //     if (other.body.collisionType === me.collision.types.ENEMY_OBJECT) {
-    //         if (other.body.hp <= 0) {
-    //             me.game.world.removeChild(this);
-    //             game.playScreen.enemyManager.removeChild(other);
-    //             game.data.score += 1;
-    //         } else {
-    //             me.game.world.removeChild(this);
-    //             other.body.hp -= 1;
-    //         }
-    //         return false;
-    //     }
-    // }
+    onCollision: function(res, other) {
+
+        if (other.body.collisionType === me.collision.types.PLAYER_OBJECT) {
+            return true;
+        }
+        return false;
+
+    }
+
+    // var res = me.game.world.collide(this);
+
+    
 });

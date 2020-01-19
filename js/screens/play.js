@@ -9,7 +9,11 @@ game.PlayScreen = me.ScreenObject.extend({
     },
 
     onResetEvent : function () {
-        me.game.world.addChild(new me.ColorLayer("background", "#000000"), 0);
+        me.game.world.addChild(new me.ImageLayer(0, 0, {
+            image:"net",
+            anchorpoint:(1, 1)
+          }), 0);
+      
         
         this.player = me.pool.pull("player");
         me.game.world.addChild(this.player, 1);

@@ -16,10 +16,7 @@ var game = {
             return;
         }
 
-        me.pool.register("player", game.Player);
-        me.pool.register("enemy", game.Enemy);
-        me.pool.register("laser", game.Laser);
-        // me.pool.register("score", game.Score);
+     
 
         // Initialize the audio.
         me.audio.init("mp3,ogg");
@@ -31,10 +28,16 @@ var game = {
 
     // Run on game resources loaded.
     loaded : function () {
-         // set the "Play/Ingame" Screen Object
         this.playScreen = new game.PlayScreen();
+        me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, this.playScreen);
+        me.state.set(me.state.GAME_OVER, new game.GameOverScreen());
+
+        me.pool.register("player", game.Player);
+        me.pool.register("enemy", game.Enemy);
+        me.pool.register("laser", game.Laser);
+
         // Start the game.
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };

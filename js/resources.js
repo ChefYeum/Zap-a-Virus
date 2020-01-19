@@ -45,6 +45,11 @@ game.resources = [
         "src": "data/img/player.png"
     },
     {
+        "name": "net",
+        "type": "image",
+        "src": "data/img/net.png"
+    },
+    {
         "name": "ships",
         "type": "image",
         "src": "data/img/enemies.png"

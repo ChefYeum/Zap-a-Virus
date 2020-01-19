@@ -49,7 +49,6 @@ game.EnemyManager = me.Container.extend({
     spawnEnemy : function () {
         // set x randomly but at least 15px off the canvas edges
         var x = Math.random()*(me.game.viewport.width-30)+15;
-        console.log("x is " +x);
         // set y to start on the line where objects are spawned
         var y = 25;
         // console.log("height is " +);

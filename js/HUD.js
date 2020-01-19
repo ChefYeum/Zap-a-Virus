@@ -64,7 +64,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
     draw : function (renderer) {
         // draw it baby !
         const score = `Score: ${game.data.score}`; 
-        const highScore = `Highscore: ${game.data.highScore}`;
+        const highScore = `High Score: ${game.data.highScore}`;
         const x = me.game.viewport.width - 50;
         const y = me.game.viewport.height - 50;
         this.font.draw (renderer, score, x, y - 50);
