@@ -15,14 +15,14 @@ game.EnemyManager = me.Container.extend({
         if (this.children.length === 0 && this.createdEnemies) {
             game.playScreen.reset();
         }
-        
+
         this._super(me.Container, "update", [time]);
         // this.updateChildBounds();
     },
 
     spawnEnemy : function () {
         // set x randomly but at least 15px off the canvas edges
-        var x = Math.random()*(me.game.viewport.width-60)+40;
+        var x = Math.random()*(me.game.viewport.width-100)+40;
         // set y to start on the line where objects are spawned
         var y = 25;
         this.addChild(me.pool.pull("enemy", x, y));

@@ -12,6 +12,7 @@ game.Player = me.Entity.extend({
         ]);
         // this.shoot();
         this.velx = 450;
+        this.minX = this.width;
         this.maxX = me.game.viewport.width - this.width;
         // this.body = new me.Body(this);
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;

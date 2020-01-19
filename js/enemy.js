@@ -5,6 +5,8 @@ game.Enemy = me.Entity.extend({
             width: 100,
             height: 100
         }]);this.z = 5;
+        this.minX = this.width;
+        this.maxX = me.game.viewport.width - this.width;
         // Hacky thing to see if it's a worm's child
         this.isWorm = false;
         if (y !== 25) {
@@ -19,7 +21,7 @@ game.Enemy = me.Entity.extend({
             this.renderable.addAnimation("idle", [1], 1);
             this.renderable.setCurrentAnimation("idle");
 
-            me.timer.setTimeout(this.spawnWormChildren.bind(this), 1000, true);
+            me.timer.setTimeout(this.spawnWormChildren.bind(this), 2000, true);
         }
         this.body.setVelocity(0, 1);
         // this.body.collisionType = me.collision.types.ENEMY_OBJECT;
