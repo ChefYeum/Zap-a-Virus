@@ -11,7 +11,7 @@ game.Laser = me.Entity.extend({
             destroy: function () {},
             draw: function (renderer) {
                 var color = renderer.getColor();
-                renderer.setColor('#5EFF7E');
+                renderer.setColor('#FF7F00');
                 renderer.fillRect(0, 0, this.width, this.height);
                 renderer.setColor(color);
             }

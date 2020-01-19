@@ -1,12 +1,11 @@
 game.EnemyManager = me.Container.extend({
     init : function () {
-        this._super(me.Container, "init", [0, 72,
-            this.COLS * 144 - 72,
-            this.ROWS * 144 - 72
+        this._super(me.Container, "init", [0, 100,
+            this.COLS * 200 - 100,
+            this.ROWS * 200 - 100
         ]);
         this.COLS = 9;
         this.ROWS = 4;
-        // this.vel = 16;
         this.vel = 0;
         me.timer.setInterval(this.spawnEnemy.bind(this), 1500);
     },
@@ -51,7 +50,6 @@ game.EnemyManager = me.Container.extend({
         var x = Math.random()*(me.game.viewport.width-30)+15;
         // set y to start on the line where objects are spawned
         var y = 25;
-        // console.log("height is " +);
         this.addChild(me.pool.pull("enemy", x, y));
         // game.playScreen.checkIfLoss(this.childBounds.bottom);
         // this.updateChildBounds();

@@ -9,6 +9,7 @@ game.PlayScreen = me.ScreenObject.extend({
     },
 
     onResetEvent : function () {
+        
         me.game.world.addChild(new me.ImageLayer(0, 0, {
             image:"net",
             anchorpoint:(1, 1)
