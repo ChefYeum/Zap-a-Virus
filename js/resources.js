@@ -47,7 +47,7 @@ game.resources = [
     {
         "name": "net",
         "type": "image",
-        "src": "data/img/net.png"
+        "src": "data/img/xpbg.jpg"
     },
     {
         "name": "ships",
