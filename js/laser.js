@@ -1,7 +1,7 @@
 game.Laser = me.Entity.extend({
     init: function(x, y) {
         const image = me.loader.getImage("player");
-        console.log(this.width);
+        // console.log(this.width);
         this._super(me.Entity, "init", [
             x - image.width/2,
             y - image.height/2,
@@ -11,7 +11,7 @@ game.Laser = me.Entity.extend({
               height: image.height
             }
         ]);
-        console.log(this.width);
+        // console.log(this.width);
         // this.shoot();
         // this.velx = 450;
         this.maxX = me.game.viewport.width - this.width;
