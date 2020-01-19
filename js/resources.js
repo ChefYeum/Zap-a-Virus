@@ -47,7 +47,7 @@ game.resources = [
     {
         "name": "ships",
         "type": "image",
-        "src": "data/img/ships.png"
+        "src": "data/img/enemies.png"
     },
     {
         "name": "gripe_run_right",

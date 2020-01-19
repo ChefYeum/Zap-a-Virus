@@ -15,7 +15,7 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.addChild(this.player, 1);
     
         this.enemyManager = new game.EnemyManager();
-        this.enemyManager.createEnemies();
+        // this.enemyManager.createEnemies();
         me.game.world.addChild(this.enemyManager, 2);
 
         this.HUD = new game.HUD.Container();
