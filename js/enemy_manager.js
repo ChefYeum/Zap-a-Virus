@@ -1,8 +1,8 @@
 game.EnemyManager = me.Container.extend({
     init : function () {
-        this._super(me.Container, "init", [0, 32,
-            this.COLS * 64 - 32,
-            this.ROWS * 64 - 32
+        this._super(me.Container, "init", [0, 72,
+            this.COLS * 144 - 72,
+            this.ROWS * 144 - 72
         ]);
         this.COLS = 9;
         this.ROWS = 4;
