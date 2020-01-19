@@ -2,8 +2,8 @@ game.Enemy = me.Entity.extend({
     init: function(x, y) {
         this._super(me.Entity, "init", [x, y, {
             image: "ships",
-            width: 72,
-            height: 72
+            width: 100,
+            height: 100
         }]);this.z = 5;
         this.chooseShipImage();
         this.body.setVelocity(0, 1);
