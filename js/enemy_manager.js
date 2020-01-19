@@ -47,7 +47,7 @@ game.EnemyManager = me.Container.extend({
 
     spawnEnemy : function () {
         // set x randomly but at least 15px off the canvas edges
-        var x = Math.random()*(me.game.viewport.width-30)+15;
+        var x = Math.random()*(me.game.viewport.width-60)+40;
         // set y to start on the line where objects are spawned
         var y = 25;
         this.addChild(me.pool.pull("enemy", x, y));

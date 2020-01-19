@@ -12,7 +12,7 @@ game.TitleScreen = me.ScreenObject.extend({
        init : function() {
            this._super(me.Renderable, 'init', [320, 480, me.game.viewport.width, me.game.viewport.height]);
            this.font = new me.BitmapFont(me.loader.getBinary('PressStart2P'), me.loader.getImage('PressStart2P'));
-           this.title = "WACK A VIRUS";
+           this.title = "ZAP A VIRUS";
            this.start = "Press Enter To Start";
 
           
