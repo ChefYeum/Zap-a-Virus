@@ -1,5 +1,5 @@
 game.Laser = me.Entity.extend({
-    init: (x, y) => {
+    init: function(x, y) {
         this._super(me.Entity, "init", [x, y, { width: game.Laser.width, height: game.Laser.height }]);
         this.z = 5;
         this.body.setVelocity(0, 300);
@@ -19,7 +19,7 @@ game.Laser = me.Entity.extend({
         this.alwaysUpdate = true;
     },
 
-    update: (time) => {
+    update: function(time) {
         this.body.vel.y -= this.body.accel.y * time / 1000;
         if (this.pos.y + this.height <= 0) {
             me.game.world.removeChild(this);
@@ -29,7 +29,7 @@ game.Laser = me.Entity.extend({
         return true;
     },
 
-    onCollision: (res, other) => {
+    onCollision: function(res, other) {
         if (other.body.collisionType === me.collision.types.ENEMY_OBJECT) {
             me.game.world.removeChild(this);
             game.playScreen.enemyManager.removeChild(other);
