@@ -10,7 +10,7 @@ game.Player = me.Sprite.extend({
         this.velx = 450;
         this.maxX = me.game.viewport.width - this.width;
 
-        me.timer.setInterval(this.shoot.bind(this), 700, true);
+        me.timer.setInterval(this.shoot.bind(this), 200, true);
     },
 
     shoot: function() {
