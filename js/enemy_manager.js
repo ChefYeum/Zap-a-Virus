@@ -53,7 +53,25 @@ game.EnemyManager = me.Container.extend({
         this.addChild(me.pool.pull("enemy", x, y));
         // game.playScreen.checkIfLoss(this.childBounds.bottom);
         // this.updateChildBounds();
-    }
+    },
+
+    spawnWormChildren: function(x, y) {
+        const isRight = x >= (me.game.viewport.width/2)
+        const newX = x + (100 * (isRight ? -1 : 1));
+        console.log({ isRight, x, newX });
+        this.addChild(
+            me.pool.pull(
+                "enemy",
+                this.pos.x + newX,
+                this.pos.y + 100)
+        );
+        // this.addChild(
+        //     me.pool.pull(
+        //         "enemy",
+        //         this.pos.x - 50,
+        //         this.pos.y + 50)
+        // );
+    },
 
 
 

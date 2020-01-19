@@ -11,7 +11,7 @@ game.Laser = me.Entity.extend({
               height: image.height
             }
         ]);
-        console.log(this.width);
+        // console.log(this.width);
         // this.shoot();
         // this.velx = 450;
         this.maxX = me.game.viewport.width - this.width;
