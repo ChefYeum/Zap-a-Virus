@@ -1,21 +1,46 @@
 game.Laser = me.Entity.extend({
     init: function(x, y) {
-        this._super(me.Entity, "init", [x, y, { width: game.Laser.width, height: game.Laser.height }]);
+        const image = me.loader.getImage("player");
+        console.log(this.width);
+        this._super(me.Entity, "init", [
+            x - image.width/2,
+            y - image.height/2,
+            {
+              image : image,
+              width: image.width,
+              height: image.height
+            }
+        ]);
+        console.log(this.width);
+        // this.shoot();
+        // this.velx = 450;
+        this.maxX = me.game.viewport.width - this.width;
+        // this.body = new me.Body(this);
+        // this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+
+        // this._super(me.Entity, "init", [
+        //     x,
+        //     y,
+        //     {
+        //         width: game.Laser.width,
+        //         height: game.Laser.height
+        //     }
+        // ]);
         this.z = 5;
         this.body.setVelocity(0, 300);
         this.body.collisionType = me.collision.types.PROJECTILE_OBJECT;
-        this.renderable = new (me.Renderable.extend({
-            init: function () {
-                this._super(me.Renderable, "init", [0, 0, game.Laser.width, game.Laser.height]);
-            },
-            destroy: function () {},
-            draw: function (renderer) {
-                var color = renderer.getColor();
-                renderer.setColor('#FF7F00');
-                renderer.fillRect(0, 0, this.width, this.height);
-                renderer.setColor(color);
-            }
-        }));
+        // this.renderable = new (me.Renderable.extend({
+        //     init: function () {
+        //         this._super(me.Renderable, "init", [0, 0, game.Laser.width, game.Laser.height]);
+        //     },
+        //     destroy: function () {},
+        //     draw: function (renderer) {
+        //         var color = renderer.getColor();
+        //         renderer.setColor('#FF7F00');
+        //         renderer.fillRect(0, 0, this.width, this.height);
+        //         renderer.setColor(color);
+        //     }
+        // }));
         this.alwaysUpdate = true;
     },
 
