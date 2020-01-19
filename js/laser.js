@@ -34,10 +34,13 @@ game.Laser = me.Entity.extend({
             if (other.body.hp <= 0) {
                 me.game.world.removeChild(this);
                 game.playScreen.enemyManager.removeChild(other);
+                game.data.score += 1;
                 return false;
             } else {
                 me.game.world.removeChild(this);
                 other.body.hp -= 1;
+                console.table(game.data.score);
+                // Display Score here
                 return false;
             }
         }
