@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           'lib/melonjs.js',
           'lib/plugins/**/*.js',
           'js/game.js',
-          'build/js/resources.js',
+          'js/resources.js',
           'js/**/*.js',
         ],
         dest: 'build/js/app.js'
