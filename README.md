@@ -22,3 +22,8 @@ Zap a Virus can be implemented even further with the use of different levels of 
 
 ## Comments
 - Dee Yeum: "The next generation of Flappy Bird"
+
+## How to run
+- With node installed, run `npm install` in the root directory of the project
+- Run `npm install -g grunt-cli`(if fails, try `sudo`)
+- Run `grunt serve` to serve
