@@ -42,5 +42,7 @@ game.PlayScreen = me.ScreenObject.extend({
         me.input.unbindKey(me.input.KEY.A);
         me.input.unbindKey(me.input.KEY.D);
         me.input.unbindKey(me.input.KEY.SPACE);
+        this.player.alive = false;
+        me.game.world.removeChild(this.player);
     }
 });
