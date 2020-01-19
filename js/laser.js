@@ -43,5 +43,5 @@ game.Laser = me.Entity.extend({
     }
 });
 
-game.Laser.width = 5;
-game.Laser.height = 28;
+// game.Laser.width = 5;
+// game.Laser.height = 28;

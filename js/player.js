@@ -1,6 +1,8 @@
 game.Player = me.Entity.extend({
     init: function() {
         const image = me.loader.getImage("player");
+        this.laserWidth = me.loader.getImage("laser").width;
+        // const image = me.loader.getImage("player");
         this._super(me.Entity, "init", [
             me.game.viewport.width / 2 - image.width / 2,
             me.game.viewport.height - image.height - 20,
@@ -23,7 +25,7 @@ game.Player = me.Entity.extend({
     shoot: function() {
         if (this.alive) {
             me.game.world.addChild(
-                me.pool.pull("laser", this.pos.x - game.Laser.width + 30, this.pos.y - game.Laser.height + 30)
+                me.pool.pull("laser", this.pos.x + this.width - 80, this.pos.y)
             );
         }
 
