@@ -19,7 +19,7 @@ game.Enemy = me.Entity.extend({
     },
 
     chooseShipImage: function () {
-        var frame = ~~(Math.random() * 3);
+        var frame = Math.floor((Math.random() * 3);
         this.renderable.addAnimation("idle", [frame], 1);
         this.renderable.setCurrentAnimation("idle");
     },

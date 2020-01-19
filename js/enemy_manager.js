@@ -7,6 +7,7 @@ game.EnemyManager = me.Container.extend({
         this.COLS = 9;
         this.ROWS = 4;
         this.vel = 16;
+        me.timer.setInterval(this.spawnEnemy.bind(this), 1500);
     },
 
     update : function (time) {
@@ -19,37 +20,20 @@ game.EnemyManager = me.Container.extend({
         this.updateChildBounds();
     },
 
-    createEnemies : function () 
-    {
-        for (var i = 0; i < this.COLS; i++) {
-            for (var j = 0; j < this.ROWS; j++) {
-                this.addChild(me.pool.pull("enemy", i * 64, j * 64));
-            }
-        }
-        this.updateChildBounds();
-    },
-    
     onActivateEvent : function () {
         var _this = this;
         this.timer = me.timer.setInterval(function () {
-            var bounds = _this.childBounds;
-        
-            if ((_this.vel > 0 && (bounds.right + _this.vel) >= me.game.viewport.width) ||
-                (_this.vel < 0 && (bounds.left + _this.vel) <= 0)) {
-                _this.vel *= -1;
-                _this.pos.y += 16;
-                if (_this.vel > 0) {
-                  _this.vel += 5;
-                }
-                else {
-                  _this.vel -= 5;
-                }
-                game.playScreen.checkIfLoss(bounds.bottom); // <<<
-            }
-            else {
-               _this.pos.x += _this.vel;
-            }
-        }, 1000);
+            
+        var bounds = _this.childBounds;
+        _this.pos.y += 15;
+        if (_this.vel > 0) {
+            _this.vel += 10;
+        } else {
+            _this.vel -= 10;
+        }
+        game.playScreen.checkIfLoss(bounds.bottom + 20);
+            
+        }, 500);
     },
     
     onDeactivateEvent : function () {
@@ -59,6 +43,20 @@ game.EnemyManager = me.Container.extend({
     removeChildNow : function (child) {
         this._super(me.Container, "removeChildNow", [child]);
         this.updateChildBounds();
+    },
+
+    spawnEnemy : function () {
+        // set x randomly but at least 15px off the canvas edges
+        var x = Math.random()*(me.game.viewport.width-30)+15;
+        console.log("x is " +x);
+        // set y to start on the line where objects are spawned
+        var y = 25;
+        // console.log("height is " +);
+        this.addChild(me.pool.pull("enemy", x, y));
+        game.playScreen.checkIfLoss(this.childBounds.bottom);
+        this.updateChildBounds();
     }
+
+
 
   });
