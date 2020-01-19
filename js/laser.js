@@ -1,7 +1,7 @@
 game.Laser = me.Entity.extend({
     init: function(x, y) {
-        const image = me.loader.getImage("player");
-        // console.log(this.width);
+        const image = me.loader.getImage("laser");
+        console.log(this.width);
         this._super(me.Entity, "init", [
             x - image.width/2,
             y - image.height/2,
@@ -27,7 +27,7 @@ game.Laser = me.Entity.extend({
         //     }
         // ]);
         this.z = 5;
-        this.body.setVelocity(0, 300);
+        this.body.setVelocity(0, 250);
         this.body.collisionType = me.collision.types.PROJECTILE_OBJECT;
         // this.renderable = new (me.Renderable.extend({
         //     init: function () {
