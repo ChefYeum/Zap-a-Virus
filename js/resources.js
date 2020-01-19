@@ -55,6 +55,11 @@ game.resources = [
         "src": "data/img/enemies.png"
     },
     {
+        "name": "laser",
+        "type": "image",
+        "src": "data/img/avast.png"
+    },
+    {
         "name": "gripe_run_right",
         "type": "image",
         "src": "data/img/sprite/gripe_run_right.png"
