@@ -2,9 +2,10 @@
 var game = {
 
     // an object where to store game information
-    data : {
+    data: {
         // score
-        score : 0
+        score: 0,
+        highScore: 0,
     },
 
     // Run on page load.
@@ -16,10 +17,9 @@ var game = {
         }
 
         me.pool.register("player", game.Player);
-
         me.pool.register("enemy", game.Enemy);
-
         me.pool.register("laser", game.Laser);
+        // me.pool.register("score", game.Score);
 
         // Initialize the audio.
         me.audio.init("mp3,ogg");
