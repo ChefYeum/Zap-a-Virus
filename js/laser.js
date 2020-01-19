@@ -33,9 +33,15 @@ game.Laser = me.Entity.extend({
 
     onCollision : function (res, other) {
         if (other.body.collisionType === me.collision.types.ENEMY_OBJECT) {
-            me.game.world.removeChild(this);
-            game.playScreen.enemyManager.removeChild(other);
-            return false;
+            if (other.body.hp <= 0) {
+                me.game.world.removeChild(this);
+                game.playScreen.enemyManager.removeChild(other);
+                return false;
+            } else {
+                me.game.world.removeChild(this);
+                other.body.hp -= 1;
+                return false;
+            }
         }
     }
 });

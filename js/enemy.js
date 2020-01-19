@@ -8,6 +8,7 @@ game.Enemy = me.Entity.extend({
         this.chooseShipImage();
         this.body.setVelocity(0, 0);
         this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+        this.body.hp = 5;
     },
 
     update : function (time) {
