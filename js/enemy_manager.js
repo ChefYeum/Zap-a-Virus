@@ -20,31 +20,6 @@ game.EnemyManager = me.Container.extend({
         // this.updateChildBounds();
     },
 
-    // onActivateEvent : function () {
-    //     var _this = this;
-    //     this.timer = me.timer.setInterval(function () {
-            
-    //     var bounds = _this.childBounds;
-    //     // _this.pos.y += 15;
-    //     // if (_this.vel > 0) {
-    //     //     _this.vel += 10;
-    //     // } else {
-    //     //     _this.vel -= 10;
-    //     // }
-    //     game.playScreen.checkIfLoss(bounds.bottom + 20);
-
-    //     }, 500);
-    // },
-    
-    // onDeactivateEvent : function () {
-    //     me.timer.clearInterval(this.timer);
-    // },
-
-    // removeChildNow : function (child) {
-    //     this._super(me.Container, "removeChildNow", [child]);
-    //     this.updateChildBounds();
-    // },
-
     spawnEnemy : function () {
         // set x randomly but at least 15px off the canvas edges
         var x = Math.random()*(me.game.viewport.width-60)+40;
@@ -65,12 +40,6 @@ game.EnemyManager = me.Container.extend({
                 this.pos.x + newX,
                 this.pos.y + 100)
         );
-        // this.addChild(
-        //     me.pool.pull(
-        //         "enemy",
-        //         this.pos.x - 50,
-        //         this.pos.y + 50)
-        // );
     },
 
 
